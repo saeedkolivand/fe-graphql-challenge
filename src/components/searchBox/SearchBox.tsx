@@ -36,6 +36,7 @@ const SearchBox: React.FC<SearchBoxPropsTypes> = (props) => {
     <div className={`search-box flex-center ${wrapperClassName}`}>
       <input
         type="text"
+        maxLength={2}
         value={userQuery}
         placeholder={searchPlaceholder}
         onChange={onSearch}

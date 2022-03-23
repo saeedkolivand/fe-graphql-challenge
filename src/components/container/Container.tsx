@@ -3,11 +3,11 @@ import { ContainerPropsTypes } from "./container.types";
 import Loading from "../loading/Loading";
 
 const Container: React.FC<ContainerPropsTypes> = (props) => {
-  const { children, className = "", loading } = props;
+  const { children, className = "", showLoading = false, ...rest } = props;
 
   return (
-    <div {...props} className={`container ${className}`}>
-      {loading && <Loading />}
+    <div {...rest} className={`container ${className}`}>
+      {showLoading && <Loading />}
 
       {children}
     </div>

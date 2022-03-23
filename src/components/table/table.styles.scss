@@ -10,16 +10,19 @@
     th {
       width: max-content;
       color: #a6acbe;
+      padding: 6px 10px;
+      text-align: start;
+
+      &:last-child {
+        text-align: center;
+      }
     }
   }
 
   .table__body {
-    padding-top: 12px;
-
     tr {
       td {
-        padding-top: 6px;
-        padding-bottom: 6px;
+        padding: 6px 10px;
 
         &:last-child {
           text-align: center;

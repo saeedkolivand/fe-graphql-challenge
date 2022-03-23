@@ -32,15 +32,6 @@
   },
   "rules": {
     "import/no-cycle": "off",
-    "import/no-restricted-paths": [
-      "error",
-      {
-        "zones": [
-          { "target": "./src/components", "from": "./src/pages" },
-          { "target": "./src/app", "from": "./src/pages" }
-        ]
-      }
-    ],
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "unused-imports/no-unused-imports": "error",
