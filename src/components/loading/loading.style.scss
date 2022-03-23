@@ -1,0 +1,44 @@
+.loading--wrapper {
+  position: fixed;
+  top: 0;
+  /*transform: translateX(-50%);*/
+  width: 100%;
+  height: 100vh;
+
+  & > .loading--background {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.5;
+  }
+
+  & > .loading--body {
+    position: absolute;
+    width: 100px;
+    height: 70px;
+    top: 45%;
+    color: #000;
+    border-radius: 10px;
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+
+    & > .loading--loader {
+      border: 4px solid #1b2328;
+      border-top: 4px solid #33bec8;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 2s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

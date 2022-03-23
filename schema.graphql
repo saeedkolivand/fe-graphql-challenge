@@ -1,0 +1,91 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+directive @key(fields: String!) on OBJECT | INTERFACE
+
+directive @extends on OBJECT | INTERFACE
+
+directive @external on OBJECT | FIELD_DEFINITION
+
+directive @requires(fields: String!) on FIELD_DEFINITION
+
+directive @provides(fields: String!) on FIELD_DEFINITION
+
+union _Entity = Continent | Country | Language
+
+type Continent {
+    code: ID!
+    countries: [Country!]!
+    name: String!
+}
+
+type Country {
+    capital: String
+    code: ID!
+    continent: Continent!
+    currency: String
+    emoji: String!
+    emojiU: String!
+    languages: [Language!]!
+    name: String!
+    native: String!
+    phone: String!
+    states: [State!]!
+}
+
+type Language {
+    code: ID!
+    name: String
+    native: String
+    rtl: Boolean!
+}
+
+type Query {
+    _entities(representations: [_Any!]!): [_Entity]!
+    _service: _Service!
+    continent(code: ID!): Continent
+    continents(filter: ContinentFilterInput): [Continent!]!
+    countries(filter: CountryFilterInput): [Country!]!
+    country(code: ID!): Country
+    language(code: ID!): Language
+    languages(filter: LanguageFilterInput): [Language!]!
+}
+
+type State {
+    code: String
+    country: Country!
+    name: String!
+}
+
+type _Service {
+    "The sdl representing the federated service capabilities. Includes federation directives, removes federation types, and includes rest of full schema after schema directives have been applied"
+    sdl: String
+}
+
+scalar _Any
+
+input ContinentFilterInput {
+    code: StringQueryOperatorInput
+}
+
+input CountryFilterInput {
+    code: StringQueryOperatorInput
+    continent: StringQueryOperatorInput
+    currency: StringQueryOperatorInput
+}
+
+input LanguageFilterInput {
+    code: StringQueryOperatorInput
+}
+
+input StringQueryOperatorInput {
+    eq: String
+    glob: String
+    in: [String]
+    ne: String
+    nin: [String]
+    regex: String
+}
