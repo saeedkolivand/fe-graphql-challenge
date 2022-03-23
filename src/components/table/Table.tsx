@@ -1,5 +1,6 @@
 import React from "react";
 import { TablePropsTypes } from "./table.types";
+import "./table.styles.scss";
 
 const Table: React.FC<TablePropsTypes> = (props) => {
   const { tableHeader, tableBody } = props;
@@ -13,11 +14,12 @@ const Table: React.FC<TablePropsTypes> = (props) => {
   };
 
   return (
-    <table>
-      <thead>
+    <table className="table">
+      <thead className="table__header">
         <tr>{generateTableHeader()}</tr>
       </thead>
-      <tbody>{tableBody}</tbody>
+
+      <tbody className="table__body">{tableBody}</tbody>
     </table>
   );
 };

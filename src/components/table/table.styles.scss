@@ -1,0 +1,30 @@
+.table {
+  width: 100%;
+  cursor: default;
+  border-spacing: unset;
+
+  .table__header {
+    width: 100%;
+    background-color: #f5f5f5;
+
+    th {
+      width: max-content;
+      color: #a6acbe;
+    }
+  }
+
+  .table__body {
+    padding-top: 12px;
+
+    tr {
+      td {
+        padding-top: 6px;
+        padding-bottom: 6px;
+
+        &:last-child {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
