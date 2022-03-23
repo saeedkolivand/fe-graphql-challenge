@@ -1,0 +1,26 @@
+.search-box {
+  position: relative;
+
+  .search-box__input {
+    width: 210px;
+    background-color: #ffffff;
+    border: 1px solid #e7ecf2;
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 0 auto;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .search-box__clear {
+    position: absolute;
+    right: 10px;
+
+    .search-box__clear--icon {
+      width: 10px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.home {
+  display: grid;
+  min-width: 50vw;
+
+  .home__search {
+    margin-top: 10vw;
+  }
+
+  .home__countries {
+    margin-top: 3vw;
+    margin-bottom: 5vw;
+  }
+}

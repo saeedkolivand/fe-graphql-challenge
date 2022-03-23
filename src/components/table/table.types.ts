@@ -1,6 +1,6 @@
-import React from "react";
+import { Country } from "pages/home/home.types";
 
 export interface TablePropsTypes {
   tableHeader?: string[];
-  tableBody: React.ReactNode;
+  tableData: Country[];
 }

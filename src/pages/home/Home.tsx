@@ -1,54 +1,48 @@
 import React, { useEffect, useState } from "react";
 import "./home.style.scss";
 import { useLazyQuery } from "@apollo/client";
-import { Country } from "./home.types";
-import Table from "../../components/table/Table";
-import SearchBox from "../../components/searchBox/SearchBox";
-import Loading from "../../components/loading/Loading";
+import Table from "components/table/Table";
+import SearchBox from "components/searchBox/SearchBox";
+import Container from "components/container/Container";
 import { GET_COUNTRIES, GET_COUNTRIES_BY_CODE } from "./home.api";
+import { CountryData } from "./home.types";
 
 const Home = () => {
   const [countryCode, setCountryCode] = useState("");
 
-  const [GetCountryByCode, { data, loading, error }] = useLazyQuery(
-    countryCode ? GET_COUNTRIES_BY_CODE : GET_COUNTRIES,
-    {
-      variables: {
-        code: countryCode,
-      },
-    }
-  );
+  const [GetCountryByCode, { data, loading, error }] =
+    useLazyQuery<CountryData>(
+      countryCode ? GET_COUNTRIES_BY_CODE : GET_COUNTRIES,
+      {
+        variables: {
+          code: countryCode,
+        },
+      }
+    );
 
   useEffect(() => {
     if (!countryCode) GetCountryByCode();
   }, [countryCode]);
 
-  const generateTableBody = (data: Country[]) => {
-    if (data)
-      return data.map((item, index) => (
-        <tr key={`index-${index}`}>
-          <td>{item.name}</td>
-          <td>{item.code}</td>
-        </tr>
-      ));
-  };
-
   const onSearchCountryCode = (code: string) =>
     setCountryCode(code.toUpperCase());
 
   return (
-    <div className="App">
-      <SearchBox value={countryCode} onChange={onSearchCountryCode} />
-
-      {loading && <Loading />}
+    <Container className="absolute-center home" showLoading={loading}>
+      <div className="home__search flex-center">
+        <SearchBox
+          value={countryCode}
+          onChange={onSearchCountryCode}
+          searchPlaceholder="search country code..."
+        />
+      </div>
 
       {data?.countries && (
-        <Table
-          tableHeader={["name", "code"]}
-          tableBody={generateTableBody(data.countries)}
-        />
+        <div className="home__countries">
+          <Table tableHeader={["name", "code"]} tableData={data.countries} />
+        </div>
       )}
-    </div>
+    </Container>
   );
 };
 
