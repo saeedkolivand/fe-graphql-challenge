@@ -1,6 +1,6 @@
 import React from "react";
 import { TablePropsTypes } from "./table.types";
-import "./table.styles.scss";
+import "./table.style.scss";
 import { CountryObjectType } from "../../pages/home/home.types";
 import NotFound from "../notFound/NotFound";
 
