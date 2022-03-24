@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { debounce } from "lodash";
 import { SearchBoxPropsTypes } from "./searchBox.types";
-import "./searchBox.styles.scss";
+import "./searchBox.style.scss";
 import ClearIcon from "../../assets/images/cross.svg";
 
 const SearchBox: React.FC<SearchBoxPropsTypes> = (props) => {
