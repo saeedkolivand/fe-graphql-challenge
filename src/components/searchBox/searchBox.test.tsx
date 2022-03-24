@@ -1,10 +1,12 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import SearchBox from "./SearchBox";
 
 const mockOnChange = jest.fn();
 
 describe("SearchBox test cases", () => {
+  afterAll(cleanup);
+
   it("should render SearchBox", () => {
     render(<SearchBox value="test" onChange={mockOnChange} />);
     const searchBoxElement = screen.getByLabelText("search-box-wrapper");

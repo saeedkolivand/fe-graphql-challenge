@@ -1,8 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { CountryObjectType } from "../../pages/home/home.types";
 import Table from "./Table";
 
 describe("Table component test cases", () => {
+  afterAll(cleanup);
+
   it("should render Table on screen", () => {
     const tempTableData: CountryObjectType[] = [];
 

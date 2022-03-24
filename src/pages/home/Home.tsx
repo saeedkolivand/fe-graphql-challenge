@@ -28,7 +28,12 @@ const Home = () => {
     setCountryCode(code.toUpperCase());
 
   return (
-    <Container className="absolute-center home" showLoading={loading}>
+    <Container
+      className="absolute-center home"
+      showLoading={loading}
+      showErrorMessage={error?.message}
+      errorRetryFunction={GetCountryByCode}
+    >
       <div className="home__search flex-center">
         <SearchBox
           value={countryCode}

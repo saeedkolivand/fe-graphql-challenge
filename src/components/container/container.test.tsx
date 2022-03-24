@@ -1,8 +1,11 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import Container from "./Container";
+import { initLoadingPortal } from "../loading/loading.test";
 
 describe("Container test cases", () => {
+  afterAll(cleanup);
+
   it("should render children", () => {
     const MockContainer = (props: { text: string }) => {
       const { text } = props;
@@ -19,10 +22,8 @@ describe("Container test cases", () => {
   });
 
   it("should render loading on screen", () => {
-    const div = document.createElement("div");
-    const body = document.querySelector("body")!;
-    div.setAttribute("id", "loading");
-    body.appendChild(div);
+    initLoadingPortal();
+
     render(<Container showLoading />);
 
     const loadingElement = screen.getByLabelText("loading-wrapper");
