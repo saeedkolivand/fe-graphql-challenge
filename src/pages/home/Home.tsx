@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./home.style.scss";
 import { useLazyQuery } from "@apollo/client";
-import Table from "components/table/Table";
-import SearchBox from "components/searchBox/SearchBox";
-import Container from "components/container/Container";
 import { GET_COUNTRIES, GET_COUNTRIES_BY_CODE } from "./home.api";
-import { CountryData } from "./home.types";
+import { CountryDataModel } from "./home.types";
+import Container from "../../components/container/Container";
+import SearchBox from "../../components/searchBox/SearchBox";
+import Table from "../../components/table/Table";
 
 const Home = () => {
   const [countryCode, setCountryCode] = useState("");
 
   const [GetCountryByCode, { data, loading, error }] =
-    useLazyQuery<CountryData>(
+    useLazyQuery<CountryDataModel>(
       countryCode ? GET_COUNTRIES_BY_CODE : GET_COUNTRIES,
       {
         variables: {

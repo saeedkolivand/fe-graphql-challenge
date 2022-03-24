@@ -1,6 +1,7 @@
 import React from "react";
 import { ContainerPropsTypes } from "./container.types";
 import Loading from "../loading/Loading";
+import "./container.style.scss";
 
 const Container: React.FC<ContainerPropsTypes> = (props) => {
   const { children, className = "", showLoading = false, ...rest } = props;

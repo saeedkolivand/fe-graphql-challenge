@@ -1,6 +1,6 @@
-import { Country } from "pages/home/home.types";
+import { CountryObjectType } from "../../pages/home/home.types";
 
 export interface TablePropsTypes {
   tableHeader?: string[];
-  tableData: Country[];
+  tableData: CountryObjectType[];
 }
