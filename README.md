@@ -1,9 +1,6 @@
 <h1 align="center">Welcome to Front-End Graphql Challenge 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
-</p>
 
-### ✋😎🤚 [Homepage](https://fastidious-travesseiro-121f02.netlify.app)
+### 👨‍💻🔗 [View demo version](https://fastidious-travesseiro-121f02.netlify.app)
 
 ## Install
 
