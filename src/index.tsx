@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./assets/global.scss";
+import "./assets/styles/global.style.scss";
 import { ApolloProvider } from "@apollo/client";
 import Home from "./pages/home/Home";
 import * as serviceWorkerRegistration from "./app/serviceWorkerRegistration";
@@ -9,7 +9,9 @@ import HttpService from "./app/apiService";
 
 ReactDOM.render(
   <ApolloProvider client={HttpService}>
-    <Home />
+    <React.StrictMode>
+      <Home />
+    </React.StrictMode>
   </ApolloProvider>,
   document.getElementById("root")
 );

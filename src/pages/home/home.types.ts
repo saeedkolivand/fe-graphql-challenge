@@ -1,8 +1,8 @@
-export interface Country {
+export interface CountryObjectType {
   name: string;
   code: string;
 }
 
-export interface CountryData {
-  countries: Country[];
+export interface CountryDataModel {
+  countries: CountryObjectType[];
 }

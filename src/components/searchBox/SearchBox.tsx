@@ -2,7 +2,7 @@ import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { debounce } from "lodash";
 import { SearchBoxPropsTypes } from "./searchBox.types";
 import "./searchBox.styles.scss";
-import ClearIcon from "./cross.svg";
+import ClearIcon from "../../assets/images/cross.svg";
 
 const SearchBox: React.FC<SearchBoxPropsTypes> = (props) => {
   const {
@@ -33,7 +33,10 @@ const SearchBox: React.FC<SearchBoxPropsTypes> = (props) => {
   };
 
   return (
-    <div className={`search-box flex-center ${wrapperClassName}`}>
+    <div
+      className={`search-box flex-center ${wrapperClassName}`}
+      aria-label="search-box-wrapper"
+    >
       <input
         type="text"
         maxLength={2}
@@ -41,6 +44,8 @@ const SearchBox: React.FC<SearchBoxPropsTypes> = (props) => {
         placeholder={searchPlaceholder}
         onChange={onSearch}
         className="search-box__input"
+        aria-label="search-box__input"
+        name="search-box__input"
       />
       {value && (
         <div onClick={clearInput} className="search-box__clear">
