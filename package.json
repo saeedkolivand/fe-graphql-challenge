@@ -6,6 +6,7 @@
     "@apollo/client": "^3.5.10",
     "graphql": "^16.3.0",
     "lodash": "^4.17.21",
+    "pwacompat": "^2.0.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",

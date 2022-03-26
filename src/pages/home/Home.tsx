@@ -44,7 +44,10 @@ const Home = () => {
 
       {data?.countries && (
         <div className="home__countries">
-          <Table tableHeader={["name", "code"]} tableData={data.countries} />
+          <Table
+            tableHeader={["country name", "country code"]}
+            tableData={data.countries}
+          />
         </div>
       )}
     </Container>
