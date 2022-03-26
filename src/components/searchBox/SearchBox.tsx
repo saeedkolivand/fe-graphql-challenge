@@ -48,13 +48,17 @@ const SearchBox: React.FC<SearchBoxPropsTypes> = (props) => {
         name="search-box__input"
       />
       {value && (
-        <div onClick={clearInput} className="search-box__clear">
+        <button
+          type="button"
+          onClick={clearInput}
+          className="search-box__clear"
+        >
           <img
             src={ClearIcon}
             alt="clear-icon"
             className="search-box__clear--icon"
           />
-        </div>
+        </button>
       )}
     </div>
   );

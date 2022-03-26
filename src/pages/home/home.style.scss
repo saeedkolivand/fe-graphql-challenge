@@ -1,8 +1,12 @@
 .home {
   display: grid;
 
+  @media (max-width: 576px) {
+    width: 85%;
+  }
+
   .home__search {
-    margin-top: 10vw;
+    margin-top: 5vw;
   }
 
   .home__countries {

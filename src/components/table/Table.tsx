@@ -17,7 +17,11 @@ const Table: React.FC<TablePropsTypes> = (props) => {
 
   const generateTableBody = (data: CountryObjectType[]) => {
     return data.map((item, index) => (
-      <tr key={`index-${index}`} aria-label="table-data">
+      <tr
+        key={`index-${index}`}
+        className="table__body__rows"
+        aria-label="table-data"
+      >
         <td>{item.name}</td>
         <td>{item.code}</td>
       </tr>
