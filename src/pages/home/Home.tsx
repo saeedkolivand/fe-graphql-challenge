@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./home.style.scss";
 import { useLazyQuery } from "@apollo/client";
-import { GET_COUNTRIES, GET_COUNTRIES_BY_CODE } from "./home.api";
+import { GET_COUNTRIES_BY_CODE } from "./home.api";
 import { CountryDataModel } from "./home.types";
 import Container from "../../components/container/Container";
 import SearchBox from "../../components/searchBox/SearchBox";
@@ -11,18 +11,15 @@ const Home = () => {
   const [countryCode, setCountryCode] = useState("");
 
   const [GetCountryByCode, { data, loading, error }] =
-    useLazyQuery<CountryDataModel>(
-      countryCode ? GET_COUNTRIES_BY_CODE : GET_COUNTRIES,
-      {
-        variables: {
-          code: countryCode,
-        },
-      }
-    );
+    useLazyQuery<CountryDataModel>(GET_COUNTRIES_BY_CODE, {
+      variables: {
+        code: countryCode,
+      },
+    });
 
   useEffect(() => {
-    if (!countryCode) GetCountryByCode();
-  }, [countryCode]);
+    GetCountryByCode();
+  }, []);
 
   const onSearchCountryCode = (code: string) =>
     setCountryCode(code.toUpperCase());
