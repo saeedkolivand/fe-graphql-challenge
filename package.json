@@ -5,8 +5,8 @@
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^14.0.0",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.3",
     "graphql": "^16.3.0",
     "lodash": "^4.17.21",
     "pwacompat": "^2.0.17",
@@ -53,9 +53,6 @@
       "last 1 safari version"
     ]
   },
-  "resolutions": {
-    "graphql": "^16.3.0"
-  },
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/lodash": "^4.14.181",
@@ -76,7 +73,7 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.6.1",
-    "sass": "^1.49.9",
+    "sass": "^1.49.10",
     "typescript": "^4.6.3"
   }
 }
