@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Front-End Graphql Challenge 👋</h1>
 
-### 👨‍💻🔗 [View demo version](https://fastidious-travesseiro-121f02.netlify.app)
+### 👨‍💻🔗 [View demo version](https://elaborate-sunshine-01ae5e.netlify.app)
 
 ## Install
 
